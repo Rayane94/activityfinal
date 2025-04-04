@@ -20,16 +20,26 @@ const schema = yup.object().shape({
 });
 
 function CommentForm() {
-  const { register, handleSubmit, reset, formState: { errors } } = useForm({
-    resolver: yupResolver(schema),
-  });
   const dispatch = useDispatch();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+    defaultValues: {
+      comment: '',
+      note: '',
+      acceptConditions: false,
+    },
+  });
 
   const onSubmit = (data) => {
     const { comment, note } = data;
     const id = new Date().getTime().toString();
     dispatch(addComment({ id, comment, note }));
-    reset();
+    reset({ comment: '', note: '', acceptConditions: false });
   };
 
   const noteOptions = Array.from({ length: 5 }, (_, i) => i + 1);
