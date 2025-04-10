@@ -10,7 +10,9 @@ function CommentList() {
   if (comments.length === 0) {
     return (
       <ListGroup className="mb-4">
-        <ListGroup.Item className="text-center">Aucun commentaire pour le moment.</ListGroup.Item>
+        <ListGroup.Item className="text-center">
+          Aucun commentaire pour le moment.
+        </ListGroup.Item>
       </ListGroup>
     );
   }
@@ -21,8 +23,8 @@ function CommentList() {
         <ListGroup.Item key={c.id}>
           <div className="d-flex justify-content-between align-items-center">
             <div>
-              <strong>Note : </strong>{c.note}/5<br />
-              <strong>Commentaire : </strong>{c.comment}
+              <strong>Note :</strong> {c.note}/5<br />
+              <strong>Commentaire :</strong> {c.comment}
             </div>
             <Button variant="danger" onClick={() => dispatch(removeComment(c.id))}>
               Supprimer

@@ -69,7 +69,9 @@ function CommentForm() {
         >
           <option value="">Sélectionnez une note</option>
           {noteOptions.map((num) => (
-            <option key={num} value={num}>{num}</option>
+            <option key={num} value={num}>
+              {num}
+            </option>
           ))}
         </Form.Select>
         {errors.note && (

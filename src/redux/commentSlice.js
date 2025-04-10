@@ -7,9 +7,7 @@ const commentSlice = createSlice({
     addComment: (state, action) => {
       state.push(action.payload);
     },
-    removeComment: (state, action) => {
-      return state.filter(c => c.id !== action.payload);
-    },
+    removeComment: (state, action) => state.filter(c => c.id !== action.payload),
   },
 });
 
