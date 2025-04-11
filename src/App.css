@@ -1,7 +1,9 @@
 .custom-container {
-  max-width: 960px;
+  max-width: 960px; 
   margin: 0 auto;
   padding: 1rem;
+  background-color: #fff;
+  text-align: left;
 }
 
 .film-poster {
@@ -13,27 +15,24 @@
 .film-title {
   font-size: 2rem;
   font-weight: bold;
+  margin-top: 1rem;
   margin-bottom: 0.5rem;
+  text-align: left;
 }
 
-.film-details {
+.film-release,
+.film-details,
+.film-synopsis {
   font-size: 1rem;
   margin-bottom: 0.5rem;
-}
-
-.film-synopsis {
-  font-size: 0.95rem;
   color: #555;
+  text-align: left;
 }
 
-.comment-section-title {
+.comment-section-title,
+.comment-form-title {
   margin-top: 2rem;
   font-size: 1.5rem;
   font-weight: bold;
-}
-
-.comment-form-title {
-  margin-top: 1rem;
-  font-size: 1.3rem;
-  font-weight: bold;
+  text-align: left;
 }

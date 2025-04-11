@@ -53,45 +53,37 @@ function CommentForm() {
           rows={3}
           placeholder="Votre commentaire"
           {...register('comment')}
-          className={errors.comment ? 'is-invalid' : ''}
+          isInvalid={!!errors.comment}
         />
-        {errors.comment && (
-          <Form.Control.Feedback type="invalid">
-            {errors.comment.message}
-          </Form.Control.Feedback>
-        )}
+        <Form.Control.Feedback type="invalid">
+          {errors.comment?.message}
+        </Form.Control.Feedback>
       </Form.Group>
       <Form.Group controlId="formNote" className="mb-3">
         <Form.Label>Note</Form.Label>
         <Form.Select
           {...register('note')}
-          className={errors.note ? 'is-invalid' : ''}
+          isInvalid={!!errors.note}
         >
           <option value="">Sélectionnez une note</option>
           {noteOptions.map((num) => (
-            <option key={num} value={num}>
-              {num}
-            </option>
+            <option key={num} value={num}>{num}</option>
           ))}
         </Form.Select>
-        {errors.note && (
-          <Form.Control.Feedback type="invalid">
-            {errors.note.message}
-          </Form.Control.Feedback>
-        )}
+        <Form.Control.Feedback type="invalid">
+          {errors.note?.message}
+        </Form.Control.Feedback>
       </Form.Group>
       <Form.Group controlId="formAcceptConditions" className="mb-3">
         <Form.Check
           type="checkbox"
           label="J’accepte les conditions générales"
           {...register('acceptConditions')}
-          className={errors.acceptConditions ? 'is-invalid' : ''}
+          isInvalid={!!errors.acceptConditions}
         />
-        {errors.acceptConditions && (
-          <Form.Control.Feedback type="invalid" className="d-block">
-            {errors.acceptConditions.message}
-          </Form.Control.Feedback>
-        )}
+        <Form.Control.Feedback type="invalid" className="d-block">
+          {errors.acceptConditions?.message}
+        </Form.Control.Feedback>
       </Form.Group>
       <Button variant="primary" type="submit">
         Ajouter
